@@ -1,10 +1,10 @@
-#three_sum(Rosa's version)
+#1 three_sum(Rosa's version)
 """
-return true if there are three numbers that add up to the target and false if
+return true if there're three numbers that add up to the target and false if
 there is not.
 """
 
-def three_sum(nums, target):
+def three_sum(nums: list[int], target: int) -> bool:
     dict_nums = {}
     for i, v in enumerate(nums):
         dict_nums[v] = i
