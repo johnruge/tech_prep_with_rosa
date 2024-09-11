@@ -19,8 +19,35 @@ def three_sum(nums: list[int], target: int) -> bool:
 
     return False
 
+#2 two_sum(blind75)
+"""
+Given an array of integer nums and an integer target, return
+indices of the two numbers such that they add up to the target.
+You may assume that each input would have exactly one solution,
+and you may not use the same element twice.
+You can return the answer in any order.
+"""
+
+def two_sum(nums: list[int], target: int) -> list[int]:
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return [i, j]
+
+#3 best time to buy and sell stock
+"""
+You are given an array of prices where prices[i] is the price of a
+given stock on an ith day.
+You want to maximize your profit by choosing a single day to buy
+one stock and choosing a different day in the future to sell that
+stock.
+Return the maximum profit you can achieve from this transaction.
+If you cannot achieve any profit, return 0
+"""
+
+
 def main():
-    print(three_sum([1, 2, 3, 4], 9))
+    print(two_sum([0,7,3, 15, 4, 89, 5, 6, 123], 9))
     return None
 
 if __name__ == "__main__":
