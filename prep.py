@@ -28,11 +28,14 @@ and you may not use the same element twice.
 You can return the answer in any order.
 """
 
+# o(n^2) solution. this is the brute force solution. it is not efficient but uses less space.
 def two_sum(nums: list[int], target: int) -> list[int]:
     for i in range(len(nums)):
         for j in range(i + 1, len(nums)):
             if nums[i] + nums[j] == target:
                 return [i, j]
+
+# o(n) solution. this is a more efficient solution that uses extra space creating a dictionary.
 
 #3 best time to buy and sell stock
 """
@@ -44,7 +47,6 @@ stock.
 Return the maximum profit you can achieve from this transaction.
 If you cannot achieve any profit, return 0
 """
-
 
 def main():
     print(two_sum([0,7,3, 15, 4, 89, 5, 6, 123], 9))
