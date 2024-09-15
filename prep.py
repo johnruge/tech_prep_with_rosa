@@ -1,3 +1,5 @@
+from classes import ListNode
+
 #1 three_sum(Rosa's version)
 """
 return true if there're three numbers that add up to the target and false if
@@ -91,16 +93,52 @@ def contains_duplicate(nums: list[int]) -> bool:
 
     return False
 
-#product of array except self
+#5 Reverse Linked List
 """
-Given an integer array nums, return an array answer such that
-answer[i] is equal to the product of all the elements of nums
-except nums[I].
-The product of any prefix or suffix of nums is guaranteed to fit in a
-32-bit integer.
-You must write an algorithm that runs in O(n) time and without
-using the division operation.
+Given the head of a singly linked list, reverse the list, and return the reversed list.
 """
+def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev = None
+        current = head
+
+        while current:
+            temp = current.next
+            current.next = prev
+            prev = current
+            current = temp
+
+        return prev
+
+#6 Merge two linked lists
+"""
+You are given the heads of two sorted linked lists list1 and list2.
+
+Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+Return the head of the merged linked list.
+"""
+def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode()
+        current = dummy
+
+        while list1 and list2:
+            if list1.val <= list2.val:
+                current.next = list1
+                list1 = list1.next
+            elif list2.val < list1.val:
+                current.next = list2
+                list2 = list2.next
+
+            current = current.next
+
+        if list1 and not list2:
+            current.next = list1
+        elif list2 and not list1:
+            current.next = list2
+
+        return dummy.next
+
+
 def main():
     print(contains_duplicate([100,1000, 30,10,4]))
     return None
